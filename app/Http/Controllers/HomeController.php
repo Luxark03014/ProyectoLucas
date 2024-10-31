@@ -15,7 +15,7 @@ class HomeController extends Controller
     if (!$user) {
         return redirect('/login'); 
     }
-    // Añade esta línea para verificar la autenticación
+   
 
     $filesController = new UploadController();
     $files = $filesController->listFiles(); 
