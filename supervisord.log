@@ -355,3 +355,87 @@
 2024-10-31 09:23:58,627 INFO reaped unknown pid 1265 (terminated by SIGINT)
 2024-10-31 09:23:58,628 INFO reaped unknown pid 1266 (terminated by SIGINT)
 2024-10-31 09:23:58,628 INFO reaped unknown pid 1261 (terminated by SIGKILL)
+2024-10-31 10:12:33,385 WARN received SIGTERM indicating exit request
+2024-10-31 10:12:33,386 INFO waiting for php to die
+2024-10-31 10:12:33,411 INFO stopped: php (exit status 0)
+2024-10-31 10:12:33,412 INFO reaped unknown pid 1014 (terminated by SIGTERM)
+2024-10-31 10:12:33,412 INFO reaped unknown pid 1015 (terminated by SIGTERM)
+2024-10-31 10:12:33,413 INFO reaped unknown pid 1016 (terminated by SIGTERM)
+2024-10-31 10:12:33,413 INFO reaped unknown pid 1017 (terminated by SIGTERM)
+2024-10-31 10:12:42,590 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-31 10:12:42,596 INFO supervisord started with pid 1
+2024-10-31 10:12:43,602 INFO spawned: 'employee-monitor-worker' with pid 10
+2024-10-31 10:12:43,606 INFO spawned: 'php' with pid 11
+2024-10-31 10:12:45,490 INFO success: employee-monitor-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-31 10:12:45,491 INFO success: php entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-31 10:15:17,592 WARN received SIGTERM indicating exit request
+2024-10-31 10:15:17,592 INFO waiting for employee-monitor-worker, php to die
+2024-10-31 10:15:17,615 INFO stopped: php (exit status 0)
+2024-10-31 10:15:17,616 INFO reaped unknown pid 19 (terminated by SIGTERM)
+2024-10-31 10:15:17,616 INFO reaped unknown pid 20 (terminated by SIGTERM)
+2024-10-31 10:15:17,616 INFO reaped unknown pid 21 (terminated by SIGTERM)
+2024-10-31 10:15:17,616 INFO reaped unknown pid 22 (terminated by SIGTERM)
+2024-10-31 10:15:17,643 INFO stopped: employee-monitor-worker (exit status 0)
+2024-10-31 10:15:21,658 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-31 10:15:21,661 INFO supervisord started with pid 1
+2024-10-31 10:15:22,666 INFO spawned: 'employee-monitor-worker' with pid 10
+2024-10-31 10:15:22,670 INFO spawned: 'php' with pid 11
+2024-10-31 10:15:24,604 INFO success: employee-monitor-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-31 10:15:24,604 INFO success: php entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-31 11:05:11,376 INFO reaped unknown pid 304 (exit status 0)
+2024-10-31 11:07:09,515 WARN received SIGTERM indicating exit request
+2024-10-31 11:07:09,516 INFO waiting for employee-monitor-worker, php to die
+2024-10-31 11:07:09,545 INFO stopped: php (exit status 0)
+2024-10-31 11:07:09,545 INFO reaped unknown pid 19 (terminated by SIGTERM)
+2024-10-31 11:07:09,545 INFO reaped unknown pid 20 (terminated by SIGTERM)
+2024-10-31 11:07:09,545 INFO reaped unknown pid 21 (terminated by SIGTERM)
+2024-10-31 11:07:09,546 INFO reaped unknown pid 22 (terminated by SIGTERM)
+2024-10-31 11:07:09,573 INFO stopped: employee-monitor-worker (exit status 0)
+2024-10-31 11:07:13,738 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-31 11:07:13,740 INFO supervisord started with pid 1
+2024-10-31 11:07:14,745 INFO spawned: 'employee-monitor-worker' with pid 11
+2024-10-31 11:07:14,750 INFO spawned: 'php' with pid 12
+2024-10-31 11:07:16,661 INFO success: employee-monitor-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-31 11:07:16,662 INFO success: php entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-31 11:35:18,038 INFO reaped unknown pid 236 (exit status 0)
+2024-10-31 11:42:47,807 WARN received SIGTERM indicating exit request
+2024-10-31 11:42:47,808 INFO waiting for employee-monitor-worker, php to die
+2024-10-31 11:42:47,839 INFO stopped: php (exit status 0)
+2024-10-31 11:42:47,839 INFO reaped unknown pid 20 (terminated by SIGTERM)
+2024-10-31 11:42:47,840 INFO reaped unknown pid 21 (terminated by SIGTERM)
+2024-10-31 11:42:47,840 INFO reaped unknown pid 22 (terminated by SIGTERM)
+2024-10-31 11:42:47,840 INFO reaped unknown pid 23 (terminated by SIGTERM)
+2024-10-31 11:42:47,865 INFO stopped: employee-monitor-worker (exit status 0)
+2024-10-31 11:42:52,089 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-31 11:42:52,091 INFO supervisord started with pid 1
+2024-10-31 11:42:53,097 INFO spawned: 'employee-monitor-worker' with pid 11
+2024-10-31 11:42:53,101 INFO spawned: 'php' with pid 12
+2024-10-31 11:42:53,287 CRIT uncaptured python exception, closing channel <POutputDispatcher at 139943229355536 for <Subprocess at 139943229355056 with name php in state STARTING> (stderr)> (<class 'OSError'>:[Errno 29] Illegal seek [/usr/lib/python3/dist-packages/supervisor/supervisord.py|runforever|220] [/usr/lib/python3/dist-packages/supervisor/dispatchers.py|handle_read_event|270] [/usr/lib/python3/dist-packages/supervisor/dispatchers.py|record_output|204] [/usr/lib/python3/dist-packages/supervisor/dispatchers.py|_log|173] [/usr/lib/python3/dist-packages/supervisor/loggers.py|info|327] [/usr/lib/python3/dist-packages/supervisor/loggers.py|log|345] [/usr/lib/python3/dist-packages/supervisor/loggers.py|emit|227] [/usr/lib/python3/dist-packages/supervisor/loggers.py|doRollover|264])
+2024-10-31 11:42:53,296 INFO exited: employee-monitor-worker (exit status 255; not expected)
+2024-10-31 11:42:53,296 INFO exited: php (exit status 255; not expected)
+2024-10-31 11:42:54,302 INFO spawned: 'employee-monitor-worker' with pid 13
+2024-10-31 11:42:54,307 INFO spawned: 'php' with pid 14
+2024-10-31 11:42:54,501 CRIT uncaptured python exception, closing channel <POutputDispatcher at 139943229355296 for <Subprocess at 139943229355056 with name php in state STARTING> (stderr)> (<class 'OSError'>:[Errno 29] Illegal seek [/usr/lib/python3/dist-packages/supervisor/supervisord.py|runforever|220] [/usr/lib/python3/dist-packages/supervisor/dispatchers.py|handle_read_event|270] [/usr/lib/python3/dist-packages/supervisor/dispatchers.py|record_output|204] [/usr/lib/python3/dist-packages/supervisor/dispatchers.py|_log|173] [/usr/lib/python3/dist-packages/supervisor/loggers.py|info|327] [/usr/lib/python3/dist-packages/supervisor/loggers.py|log|345] [/usr/lib/python3/dist-packages/supervisor/loggers.py|emit|227] [/usr/lib/python3/dist-packages/supervisor/loggers.py|doRollover|264])
+2024-10-31 11:42:54,512 INFO exited: employee-monitor-worker (exit status 255; not expected)
+2024-10-31 11:42:54,512 INFO exited: php (exit status 255; not expected)
+2024-10-31 11:42:56,519 INFO spawned: 'employee-monitor-worker' with pid 15
+2024-10-31 11:42:56,523 INFO spawned: 'php' with pid 16
+2024-10-31 11:42:56,699 CRIT uncaptured python exception, closing channel <POutputDispatcher at 139943229355680 for <Subprocess at 139943229355056 with name php in state STARTING> (stderr)> (<class 'OSError'>:[Errno 29] Illegal seek [/usr/lib/python3/dist-packages/supervisor/supervisord.py|runforever|220] [/usr/lib/python3/dist-packages/supervisor/dispatchers.py|handle_read_event|270] [/usr/lib/python3/dist-packages/supervisor/dispatchers.py|record_output|204] [/usr/lib/python3/dist-packages/supervisor/dispatchers.py|_log|173] [/usr/lib/python3/dist-packages/supervisor/loggers.py|info|327] [/usr/lib/python3/dist-packages/supervisor/loggers.py|log|345] [/usr/lib/python3/dist-packages/supervisor/loggers.py|emit|227] [/usr/lib/python3/dist-packages/supervisor/loggers.py|doRollover|264])
+2024-10-31 11:42:56,708 INFO exited: php (exit status 255; not expected)
+2024-10-31 11:42:56,724 INFO exited: employee-monitor-worker (exit status 255; not expected)
+2024-10-31 11:42:59,731 INFO spawned: 'employee-monitor-worker' with pid 17
+2024-10-31 11:42:59,735 INFO spawned: 'php' with pid 18
+2024-10-31 11:42:59,948 INFO exited: employee-monitor-worker (exit status 255; not expected)
+2024-10-31 11:42:59,950 CRIT uncaptured python exception, closing channel <POutputDispatcher at 139943229355920 for <Subprocess at 139943229355056 with name php in state STARTING> (stderr)> (<class 'OSError'>:[Errno 29] Illegal seek [/usr/lib/python3/dist-packages/supervisor/supervisord.py|runforever|220] [/usr/lib/python3/dist-packages/supervisor/dispatchers.py|handle_read_event|270] [/usr/lib/python3/dist-packages/supervisor/dispatchers.py|record_output|204] [/usr/lib/python3/dist-packages/supervisor/dispatchers.py|_log|173] [/usr/lib/python3/dist-packages/supervisor/loggers.py|info|327] [/usr/lib/python3/dist-packages/supervisor/loggers.py|log|345] [/usr/lib/python3/dist-packages/supervisor/loggers.py|emit|227] [/usr/lib/python3/dist-packages/supervisor/loggers.py|doRollover|264])
+2024-10-31 11:42:59,951 INFO gave up: employee-monitor-worker entered FATAL state, too many start retries too quickly
+2024-10-31 11:42:59,965 INFO exited: php (exit status 255; not expected)
+2024-10-31 11:43:00,966 INFO gave up: php entered FATAL state, too many start retries too quickly
+2024-10-31 11:43:48,025 INFO reaped unknown pid 41 (exit status 0)
+2024-10-31 11:46:27,215 INFO reaped unknown pid 65 (exit status 0)
+2024-10-31 11:47:34,296 WARN received SIGTERM indicating exit request
+2024-10-31 11:47:38,355 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-10-31 11:47:38,358 INFO supervisord started with pid 1
+2024-10-31 11:47:39,363 INFO spawned: 'employee-monitor-worker' with pid 10
+2024-10-31 11:47:39,368 INFO spawned: 'php' with pid 11
+2024-10-31 11:47:40,783 INFO success: employee-monitor-worker entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-10-31 11:47:40,783 INFO success: php entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

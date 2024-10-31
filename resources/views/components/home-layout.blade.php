@@ -7,8 +7,11 @@
     @vite('resources/css/app.css')
     <title>Document</title>
 </head>
-<body>
+<body class>
     <h1>Home</h1>
     {{$slot}}
+    <h2>Vista Previa de Archivos </h2>
+    {{$fileLayout}}
+
 </body>
 </html>

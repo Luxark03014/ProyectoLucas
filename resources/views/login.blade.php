@@ -1,4 +1,4 @@
-<form action="{{ route('login.submit') }}" method="POST">
+<form class="flex flex-col bg-black" action="{{ route('login.submit') }}" method="POST">
     @csrf 
     <div>
         <label for="email">Email:</label>
