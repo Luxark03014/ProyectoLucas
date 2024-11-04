@@ -1,9 +1,10 @@
 <?php
+
 namespace App\Livewire;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\UploadController;
+use Illuminate\Support\Facades\Storage; // Asegúrate de incluir esto
 
 class Home extends Component
 {
@@ -18,8 +19,22 @@ class Home extends Component
             return redirect('/login');
         }
 
-        $filesController = new UploadController();
-        $this->files = $filesController->listFiles();
+        $this->files = $this->listFiles(); // Obtener los archivos directamente
+    }
+
+    // Método para listar archivos
+    public function listFiles()
+    {
+        $files = Storage::disk('public')->files('uploads');
+
+        // Comprobar si no hay archivos
+        if (empty($files)) {
+            return []; 
+        }
+
+        return array_map(function ($file) {
+            return Storage::url($file); // Devuelve la URL accesible del archivo
+        }, $files);
     }
 
     public function render()

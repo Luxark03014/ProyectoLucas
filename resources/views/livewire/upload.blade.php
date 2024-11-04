@@ -1,10 +1,7 @@
 
+<form wire:submit.prevent="uploadFile">
+    <input type="file" wire:model="file" required>
+    @error('file') <span class="error">{{ $message }}</span> @enderror
 
-<div>
-<form method="POST" action={{ route('upload')}} enctype="multipart/form-data" >
-    @csrf
-    <label for="file"><p>Archivo: </p></label><br>
-    <input type="file" name="file" required>
-    <input type="submit" value="Enviar" >
-</form> 
-</div>
+    <button class="text-lg" type="submit">Subir Archivo</button>
+</form>

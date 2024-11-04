@@ -3,12 +3,14 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\WithFileUploads; // Asegúrate de incluir esto
 use Illuminate\Support\Facades\Storage;
 
 class Upload extends Component
 {
+    use WithFileUploads; // Añadir el trait aquí
+
     public $file;
-    public $uploadedFile;
 
     protected $rules = [
         'file' => 'required|file',
@@ -18,27 +20,19 @@ class Upload extends Component
     {
         $this->validate();
 
+        
         $path = $this->file->store('uploads', 'public');
 
-        $this->uploadedFile = basename($path);
+    
+        
 
-      
-        session()->flash('message', 'Archivo subido exitosamente.');
-    }
-
-    public function listFiles()
-    {
-        $files = Storage::disk('public')->files('uploads');
-
-        return array_map(function ($file) {
-            return Storage::url($file);
-        }, $files);
+        
+        $this->file = null;
+        return view('livewire.home');
     }
 
     public function render()
     {
-        return view('livewire.upload', [
-            'files' => $this->listFiles(), // Listar archivos para mostrar en la vista
-        ]);
+        return view('livewire.upload');
     }
 }
