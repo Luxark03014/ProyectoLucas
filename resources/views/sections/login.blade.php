@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-    <main class="p-5 "> 
-        <section class="w-full max-w-md flex flex-col justify-center items-center bg-white p-6 rounded-lg shadow-md">
+    <main class="h-screen w-full flex items-center justify-center bg-gray-200"> 
+        <section class="flex flex-col gap-3 p-6 bg-white rounded-lg shadow-md">
             @livewire('login-form')
         </section>
     </main>
