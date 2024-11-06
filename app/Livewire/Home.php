@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Home extends Component
 {
-    public $uploadedFile;
+   
     public $user;
     public $files = [];
 
@@ -21,28 +21,45 @@ class Home extends Component
         }
 
         $this->files = $this->listFiles(); 
-        $this->uploadedFile = \App\Models\UploadedFile::latest()->first();
+        
     }
 
  
     public function listFiles()
-    {
-        $files = Storage::disk('public')->files('uploads');
+{
+    $files = \App\Models\UploadedFile::all(); 
 
+    if ($files->isEmpty()) {
+        return [];  
+    }
+
+    return $files->map(function ($file) {
+        $filePath = storage_path('app/public/' . $file->filepath);
         
-        if (empty($files)) {
-            return []; 
+        if (!file_exists($filePath)) {
+            
+            $file->delete();
+            return null;  
         }
 
-        return array_map(function ($file) {
-            return Storage::url($file); 
-        }, $files);
-    }
+      
+        $user = $file->user;
+     
+
+        return [
+            'filename' => $file->filename,
+            'url' => Storage::url($file->filepath),
+            'user' => $user ? $user->name : 'Desconocido',
+            'role' => $user->roles->title,
+        ];
+    })->filter()->toArray();  
+}
+
 
     public function render()
     {
         return view('livewire.home', [
-            'uploadedFile' => $this->uploadedFile,
+            'files' => $this->files,
         ]);
     }
 }

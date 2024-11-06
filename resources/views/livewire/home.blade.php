@@ -43,31 +43,38 @@
            
            
             @if (isset($files) && count($files) > 0)
-                <ul class="space-y-4">
-                    @foreach ($files as $file)
-                        <li class="flex items-center p-4 bg-gray-50 border border-gray-200 rounded-lg shadow-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 mr-3" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M3 3a2 2 0 012-2h10a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V3zm8 2a1 1 0 00-1-1H7a1 1 0 100 2h3a1 1 0 001-1zm1 4a1 1 0 01-1 1H7a1 1 0 010-2h3a1 1 0 011 1zm-1 4a1 1 0 01-1 1H7a1 1 0 010-2h3a1 1 0 011 1z" clip-rule="evenodd" />
-                            </svg>
-                            <iframe src="{{ $file }}" class="w-full h-28 rounded border" title="Archivo subido">{{ basename($file) }}</iframe>
-                            
+    <ul class="space-y-4">
+        @foreach ($files as $file)
+            <li class="flex items-center p-4 bg-gray-50 border border-gray-200 rounded-lg shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 mr-3" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 3a2 2 0 012-2h10a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V3zm8 2a1 1 0 00-1-1H7a1 1 0 100 2h3a1 1 0 001-1zm1 4a1 1 0 01-1 1H7a1 1 0 010-2h3a1 1 0 011 1zm-1 4a1 1 0 01-1 1H7a1 1 0 010-2h3a1 1 0 011 1z" clip-rule="evenodd" />
+                </svg>
+                
+               
+                @if (in_array(pathinfo($file['filename'], PATHINFO_EXTENSION), ['pdf', 'jpg', 'jpeg', 'png', 'gif']))
+                    <iframe src="{{ $file['url'] }}" class="w-full h-28 rounded border" title="Archivo subido"></iframe>
+                @else
+                    
+                    <p>No se ha podido guardar la vista previa de: {{ $file['filename'] }}</p>
+                @endif
+            </li>
+            
+            <div class="flex justify-between">
+                <div>
+                    <p><strong>Usuario: </strong>{{ $file['user'] }}</p>
+                    <p><strong>Departamento: </strong>{{ $file['role'] }}</p>
+                </div>
+                <div>
+                   
+                    <a href="{{ $file['url'] }}" download="{{ basename($file['url']) }}" class="text-blue-500 hover:text-blue-700">Descargar</a>
+                </div>
+            </div>
+        @endforeach
+    </ul>
+@else
+    <p class="text-gray-600">No hay archivos subidos.</p>
+@endif
 
-                        </li>
-                        <div class="flex justify-between">
-                        <div>
-                        <p><strong>Usuario: </strong>{{ $uploadedFile->user->name }}</p>
-                            <p><strong>Departamento: </strong>{{ $uploadedFile->user->roles->title}}</p>
-                        </div>
-                        <div>
-                           
-                            <a href={{ $uploadedFile->filepath }} download="{{ $uploadedFile->filename }}" class="text-blue-500 hover:text-blue-700">Descargar</a>
-                        </div>
-                        </div>
-                    @endforeach
-                </ul>
-            @else
-                <p class="text-gray-600">No hay archivos subidos.</p>
-            @endif
         </div>
     </div>
 </div>

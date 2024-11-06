@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class Upload extends Component
 {
+    use WithFileUploads;
+    public $user;
+    public $file;
+
+
     public function mount()
     {
         
@@ -18,9 +23,6 @@ class Upload extends Component
             return redirect('/login');
         }
     }
-    use WithFileUploads;
-    public $user;
-    public $file;
     
 
     protected $rules = [
@@ -39,12 +41,11 @@ class Upload extends Component
             'filename' => $this->file->getClientOriginalName(),
             'filepath' => $path,
             'filetype' => $this->file->getClientMimeType(),
-            'user_id' => $this->user->id, 
-            
+            'user_id' => $this->user->id,
         ]);
 
         
-        $this->file = null;
+      
 
    
         return redirect()->route('home')->with('message', 'Archivo subido exitosamente.');
