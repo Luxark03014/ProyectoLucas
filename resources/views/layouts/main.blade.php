@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +11,11 @@
     @livewireStyles
     <title>Portal Trabajos</title>
 </head>
-<body class="h-screen w-screen bg-gray-200">
-    
+<body class="h-screen w-screen bg-white overflow-x-hidden">
+    @include('components.navbar')
+    <div class="bg-white">
     @yield('content')
-
+    </div>
     @livewireScripts
     
 </body>

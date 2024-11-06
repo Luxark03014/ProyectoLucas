@@ -4,10 +4,11 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage; // Asegúrate de incluir esto
+use Illuminate\Support\Facades\Storage; 
 
 class Home extends Component
 {
+    public $uploadedFile;
     public $user;
     public $files = [];
 
@@ -19,26 +20,29 @@ class Home extends Component
             return redirect('/login');
         }
 
-        $this->files = $this->listFiles(); // Obtener los archivos directamente
+        $this->files = $this->listFiles(); 
+        $this->uploadedFile = \App\Models\UploadedFile::latest()->first();
     }
 
-    // Método para listar archivos
+ 
     public function listFiles()
     {
         $files = Storage::disk('public')->files('uploads');
 
-        // Comprobar si no hay archivos
+        
         if (empty($files)) {
             return []; 
         }
 
         return array_map(function ($file) {
-            return Storage::url($file); // Devuelve la URL accesible del archivo
+            return Storage::url($file); 
         }, $files);
     }
 
     public function render()
     {
-        return view('livewire.home'); // Asegúrate de que esta vista existe
+        return view('livewire.home', [
+            'uploadedFile' => $this->uploadedFile,
+        ]);
     }
 }
