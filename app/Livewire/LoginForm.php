@@ -19,7 +19,7 @@ class LoginForm extends Component
         $this->validate();
 
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
-            return redirect()->to('/home');
+            return redirect()->to('/');
         } else {
             session()->flash('error', 'Credenciales incorrectas');
         }

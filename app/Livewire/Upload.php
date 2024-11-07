@@ -48,7 +48,7 @@ class Upload extends Component
       
 
    
-        return redirect()->route('home')->with('message', 'Archivo subido exitosamente.');
+        return redirect()->route('/')->with('message', 'Archivo subido exitosamente.');
 
         
         
